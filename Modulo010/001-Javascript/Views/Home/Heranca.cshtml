@@ -1,0 +1,31 @@
+﻿@section script{
+    <script type="text/javascript">
+        var Dino = function (nome) {
+            var _nome;
+
+            this.getNome = function () { return _nome; };
+            this.setNome = function (nome) { _nome = nome; };
+
+            this.setNome(nome);
+        }
+
+        Dino.prototype = {
+            toString: function () {
+                return this.getNome();
+            }
+        };
+
+        var TRex = function (nome) {
+            this.setNome(nome);
+        }
+
+        TRex.prototype = new Dino();
+        TRex.prototype.constructor = TRex;
+
+        var a = new Dino("Pteranodonte");
+        alert(a);
+
+        var b = new TRex("Tiranossauro Rex");
+        alert(b);
+    </script>
+}

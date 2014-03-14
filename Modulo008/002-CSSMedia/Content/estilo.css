@@ -1,0 +1,40 @@
+﻿@media screen {
+    body {
+        background-color: #ccc;
+        color: #000;
+        font-family: Verdana, arial, 'Trebuchet MS', sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: justify;
+    }
+}
+
+@media (max-width:480px) {
+    body {
+        background-color: #ff0;
+        color: #f00;
+    }
+}
+
+@media print {
+    body {
+        font-family: Verdana, arial, 'Trebuchet MS', sans-serif;
+    }
+
+    button {
+        display: none;
+    }
+}
+
+@page {
+    size: A4;
+    margin-left: 3cm;
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+    margin-right: 1cm;
+}

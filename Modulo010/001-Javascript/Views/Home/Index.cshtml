@@ -1,0 +1,332 @@
+﻿<input type="button" onclick="javascript: document.getElementById('resultado').innerText = somar(10, 20); this.disabled = true;" value="somar 10 e 20" />
+
+<label id="resultado"></label>
+
+@section script
+{
+    <script type="text/javascript">
+        var x, y;
+
+        //window.alert(x);
+        //document.writeln(x);
+
+        //x = null;
+        //document.writeln(x);
+
+        //x = 10;
+        //document.writeln(x + 1);
+
+        //x = "1000";
+        //document.writeln(x + 1);
+        //document.writeln(1 + x);
+        //document.writeln(1 + x / 1);
+
+        x = 10;
+        y = 3;
+
+        var z;
+
+        //operadores aritméticos
+        //+ - * / %
+        //document.writeln("<p>" + x + y + "</p>");
+        //document.writeln("<p>" + (x + y) + "</p>");
+        //document.writeln("<p>" + (x - y) + "</p>");
+        //document.writeln("<p>" + (x * y) + "</p>");
+        //document.writeln("<p>" + (x / y) + "</p>");
+        //document.writeln("<p>" + (x % y) + "</p>");
+        //document.writeln("<p>" + (x / 0) + "</p>");
+        //document.writeln("<p>" + (x / z) + "</p>");
+
+        //operadores de atribuição
+        //= += -= *= /= %=
+
+        //x = 1;
+
+        //document.writeln("<p>" + (x += 1) + "</p>"); //x = x + 1 => 2
+        //document.writeln("<p>" + (x *= 2) + "</p>"); //x = x * 2 => 4
+        //document.writeln("<p>" + (x -= 3) + "</p>"); //x = x - 3 => 1
+        //document.writeln("<p>" + (x /= 4) + "</p>"); //x = x / 4 => 0.25
+        //document.writeln("<p>" + (x %= 2) + "</p>"); //x = x % 2 => 0.25
+
+        //operadores de incremento/decremento
+        //++ --
+
+        //x = 1;
+
+        //document.writeln("<p>" + (++x) + "</p>"); //x += 1 => x = x + 1 => 2 2
+        //document.writeln("<p>" + (x++) + "</p>"); //x += 1 => x = x + 1 => 3 2
+        //document.writeln("<p>" + (x--) + "</p>"); //x -= 1 => x = x - 1 => 2 3
+        //document.writeln("<p>" + (--x) + "</p>"); //x += 1 => x = x + 1 => 1 1
+
+        //document.writeln(x += x++); //x = 1 + 1 ... (+ 1)
+        //document.writeln(x);
+
+        //operadores relacionais
+        //== === != !== > >= < <=
+
+        //var x = 10;
+        //var y = 3;
+
+        //document.writeln("<p>" + (x == x) + "</p>");
+        //document.writeln("<p>" + (x != y * 3 + 1) + "</p>");
+        //document.writeln("<p>" + (x > y * 3 + 1) + "</p>");
+        //document.writeln("<p>" + (x >= y * 3 + 1) + "</p>");
+        //document.writeln("<p>" + (x < y * 3 + 1) + "</p>");
+        //document.writeln("<p>" + (x <= y * 3 + 1) + "</p>");
+        //document.writeln("<p>" + (x == "10") + "</p>");
+        //document.writeln("<p>" + (x === "10") + "</p>");
+
+        //operador ternário
+        //?:
+
+        //x = 11;
+
+        //document.writeln("<p>" + x + " é " + (x % 2 == 0 ? "" : "ím") + "par</p>");
+
+        //operadores lógicos
+        //&& || !
+
+        //var txt;// = "acz";
+
+        //document.writeln("<p>" + (txt != undefined && String.length(txt) == 3) + "</p>");
+        //document.writeln("<p>" + (true || false) + "</p>");
+        //document.writeln("<p>" + (!true) + "</p>");
+
+        //document.writeln(new Date());
+
+        //desvio de fluxo
+        //if switch
+
+        //if(condicao)
+        //{
+        //    bloco de comandos para true
+        //}
+        //else
+        //{
+        //    bloco de comandos para false
+        //}
+
+        //var numero = 13;
+
+        //if (numero % 2 == 0) /*{*/
+        //    document.writeln("<p>o número " + numero + " é par</p>");
+        //    /*}*/
+        //else {
+        //    document.writeln("<h1>o número ");
+        //    document.writeln(numero);
+        //    document.writeln(" é ímpar</h1>");
+        //}
+
+        //var dia = 4;
+
+        //if (dia == 1)
+        //    document.writeln("<p>dom</p>");
+        //else if (dia == 2)
+        //    document.writeln("<p>seg</p>");
+        //else if (dia == 3)
+        //    document.writeln("<p>ter</p>");
+        //else if (dia == 4)
+        //    document.writeln("<p>qua</p>");
+        //else if (dia == 5)
+        //    document.writeln("<p>qui</p>");
+        //else if (dia == 6)
+        //    document.writeln("<p>sex</p>");
+        //else if (dia == 7)
+        //    document.writeln("<p>sáb</p>");
+        //else
+        //    document.writeln("<p>erro!!!</p>");
+
+        //switch (dia) {
+        //    case 1: document.writeln("<p>dom</p>"); break;
+        //    case 2: document.writeln("<p>seg</p>"); break;
+        //    case 3: document.writeln("<p>ter</p>"); break;
+        //    case 4: document.writeln("<p>qua</p>"); break;
+        //    case 5: document.writeln("<p>qui</p>"); break;
+        //    case 6: document.writeln("<p>sex</p>"); break;
+        //    case 7: document.writeln("<p>sáb</p>"); break;
+        //    default:
+        //        document.writeln("<p>erro!!!</p>");
+        //        break;
+        //}
+
+        //if (dia == 1 || dia == 7)
+        //    document.writeln("<p>fds</p>");
+        //else if (dia >= 2 && dia <= 6)
+        //    document.writeln("<p>du</p>");
+        //else
+        //    document.writeln("<p>erro!!!</p>");
+
+        //switch (dia) {
+        //    case 1:
+        //    case 7: document.writeln("<p>fds</p>"); break;
+        //    case 2:
+        //    case 3:
+        //    case 4:
+        //    case 5:
+        //    case 6: document.writeln("<p>du</p>"); break;
+        //    default: document.writeln("<p>erro!!!</p>"); break;
+        //}
+
+        //var num = 2;
+
+        //switch (num) {
+        //    case 1:
+        //        num += 2;
+        //    case 2:
+        //        num += 2;
+        //    case 3:
+        //        num += 2;
+        //        document.writeln(num);
+        //        break;
+        //    default:
+        //        document.writeln("<p>erro</p>");
+        //        break;
+        //}
+
+        //estruturas de repetição
+        //while do...while for
+
+        //while(condicao){ bloco de comandos }
+
+        //var i = 1;
+
+        //while (i <= 5) {
+        //    document.writeln("<p>primeiro while: " + i++ + "</p>")
+        //}
+
+        //while (i <= 5) {
+        //    document.writeln("<p>segundo while: " + i++ + "</p>")
+        //}
+
+        //do { bloco de comandos } while(condicao)
+
+        //var i = 1;
+
+        //do {
+        //    document.writeln("<p>primeiro do: " + i++ + "</p>")
+        //} while (i <= 5);
+
+        //do {
+        //    document.writeln("<p>segundo do: " + i++ + "</p>")
+        //} while (i <= 5);
+
+        //for (declaracao; condicao; incremento/decremento) { bloco de comandos }
+
+        //for (var i = 1/*, j = 2*/; i <= 5; i++/*, j--*/) {
+        //    document.writeln("<p>primeiro for: " + i + "</p>")
+        //}
+
+        //for (var i = 1; i <= 5; i++) {
+        //    document.writeln("<p>segundo for: " + i + "</p>")
+        //}
+
+        //var x = [1, 11, 111, 1111]; //array
+
+        //for (var i in x) {
+        //    document.writeln("<p>" + i + " -> " + x[i] + "</p>")
+        //}
+
+        //for (var i in "abcde") {
+        //    document.writeln("<p>" + i + " -> " + "abcde"[i] + "</p>")
+        //}
+
+//        window.alert("ba'ta\"tinha")
+//        window.alert('ba\'ta"tinha')
+//        window.alert('ba\\ta"tinha')
+//        window.alert('ba\nta\nti\nnha')
+//        document.writeln('<pre>var x;\nx = 10;\n\tdocument.writeln(x);</pre>');
+//        window.alert("uma string \
+//muito comprida, \
+//mesmo...");
+
+        function somar(x, y) {
+            return x + y;
+        }
+
+        //var s = "agnaldo";
+
+        //var objString = new String("agnaldo");
+
+        //var hoje = new Date();
+
+        //var nascimentoDoAgnaldo = new Date(1966, 8, 12, 8);
+
+        //alert(typeof (s) == "string");
+        //alert(typeof (nascimentoDoAgnaldo));
+
+        ////int x = 10; //java, C#, c, c++, ...
+
+        //alert(hoje - nascimentoDoAgnaldo);
+
+        //var re = new RegExp("[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9]");
+        //alert(re.test("04010-100"));
+        //alert(re.test("4010-100"));
+
+        //alert(Math.E);//2.718281828459045...
+        //alert(Math.sin(Math.PI / 4)); //0.7071
+
+        //var x = 2.345;
+
+        //alert(Math.round(x * 100) / 100);
+
+        //x = 2.745;
+
+        //alert(Math.round(x * 10) / 10);
+
+        //alert(Math.floor(x * 100) / 100); //truncar
+
+        //alert(Math.ceil(x)); //menor inteiro MAIOR que o x
+        //alert(Math.floor(x)); //maior inteiro MENOR que o x
+
+        //var ints = new Array(5);
+
+        //for (var i = 0; i < ints.length; i++) {
+        //    ints[i] = Math.pow(2, i);
+        //}
+
+        //for (var i in ints) {
+        //    document.writeln(ints[i]);
+        //}
+
+        //var strings = new Array("adão", "eva", "caim", "abel");
+
+        //for (var i in strings) {
+        //    document.writeln(strings[i]);
+        //}
+
+        //var datas = [new Date(), new Date(1966, 8, 12)];
+
+        //for (var i in datas) {
+        //    document.writeln(datas[i]);
+        //}
+
+        //var pessoa = {
+        //    codigo: 1,
+        //    nome: "adão",
+        //    sexo: "m"
+        //};
+
+        //document.writeln(pessoa.codigo);
+        //document.writeln(pessoa.nome);
+        //document.writeln(pessoa.sexo);
+
+        //representação em xml -> "<pessoa><codigo>1</codigo><nome>adão</nome>..."
+
+        //var familia = [
+        //    {
+        //        codigo: 1,
+        //        nome: "adão",
+        //        sexo: "m"
+        //    },
+        //    {
+        //        codigo: 2,
+        //        nome: "eva",
+        //        sexo: "f"
+        //    }
+        //];
+
+        //for (var i in familia) {
+        //    document.writeln(familia[i].nome);
+        //}
+    </script>
+}

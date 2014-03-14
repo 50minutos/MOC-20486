@@ -1,0 +1,44 @@
+﻿@model _001_View.Models.Cidade
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div id="content-form">
+    @using (Html.BeginForm("Create", "Cidade"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <h1>Nova cidade</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <th>@Html.LabelFor(model => model.Nome)</th>
+                    <td>
+                        @Html.TextBoxFor(model => model.Nome, null, new
+                   {
+                       @size = 50,
+                       @title = "Nome da cidade", 
+                       @autofocus="autofocus"
+                   })
+                        <span class="required" title="campo obrigatório">*</span>
+                        @Html.ValidationMessageFor(model => model.Nome)
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Html.LabelFor(model => model.SiglaUF)</th>
+                    <td>
+                        @Html.DropDownList("SiglaUF", (IEnumerable<SelectListItem>)ViewData["SiglaUFDDL"], "escolha uma opção", new
+                   {
+                       @title = "Sigla da UF"
+                   })
+                        <span class="required" title="campo obrigatório">*</span>
+                        @Html.ValidationMessageFor(model => model.SiglaUF)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p id="action"><input type="submit" value="&#x2714;" class="" /></p>
+    }
+</div>

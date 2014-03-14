@@ -1,0 +1,103 @@
+﻿<ul>
+    <li><a href="http://50minutos.com.br">50minutos</a></li>
+</ul>
+<ul>
+    <li><a href="http://msdn.microsoft.com">MSDN</a></li>
+    <li><a href="http://technet.microsoft.com">Technet</a></li>
+    <li><a href="http://www.green.com.br">Green</a></li>
+</ul>
+
+<table>
+    <tr>
+        <td>linha 1</td>
+    </tr>
+    <tr>
+        <td>linha 11</td>
+    </tr>
+    <tr>
+        <td>linha 111</td>
+    </tr>
+    <tr>
+        <td>linha 1111</td>
+    </tr>
+    <tr>
+        <td>linha 11111</td>
+    </tr>
+    <tr>
+        <td>linha 111111</td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    alert($("ul > li:first-child > a").attr("href"));
+</script>
+
+@section style{
+    <style type="text/css">
+        table {
+            border: 1px solid #000;
+            margin: 10px auto;
+            padding: 5px;
+            border-collapse: collapse;
+        }
+
+            table tr, table tr td {
+                border: 1px solid #000;
+                padding: 5px;
+            }
+
+                table tr:nth-child(2n) {
+                    border: 1px solid #000;
+                    background-color: #999;
+                }
+
+                table tr:nth-child(2n + 1) {
+                    border: 1px solid #000;
+                    background-color: #fff;
+                }
+    </style>
+}
+
+<!--There are three kinds of filter selectors that you can use, numerical or positioned filters:
+
+:first - Matches the first item in the context
+:last - Matches the last item in the context
+:first-child - Matches the first child item in the context
+:last-child - Matches the last child item in the context
+:only-child - Returns all items that have no siblings
+:nth-child(n) - Matches the nth child item in the context
+:nth-child(even|odd) - Matches the even or odd children in the context
+:nth-child(xn+y) - Matches the nth children based on the formula. Examples: (3x+1) Get the first element after every third child. (3x) get every third child element.
+:even - Match the even children in the context
+:odd - Match the odd children in the context
+:eq(n) - Match the child at the nth position in the context
+:gt(n) - Match the children that are greater then the nth position in the context
+:lt(n) - Match the children that are lesser then the nth position in the context
+
+Traditional CSS filters:
+:checked - Matches checkbox/radio button elements in checked state
+:disabled - Matches disabled elements
+:enabled - Matches enabled elements
+:not(selector) - Matches elements that are not in the selection
+
+
+jQuery Pseudo filters:
+:animated - Matches elements that are being animated.
+:button - Matches button elements
+:checkbox - Matches checkbox elements
+:contains(string) - Matches elements that contain specified string (i.e. $(“p:contains(jQuery)”);)
+:file - Matches file input elements
+:has(selector) - Matches elements that have at least one of the specified matched selector.
+:header - Matches header elements. (i.e. h1-h6)
+:hidden - Matches hidden elements
+:image - Matches image input elements
+:input - Matches form elements
+:parent - Matches elements that have children, including text, which are not empty
+:password - Matches elements of type password
+:radio - Matches radio elements
+:reset - Matches reset buttons
+:selected - Matches option elements in selected state
+:submit - Matches elements of type submit
+:text - Matches elements of type text
+:visible - Matches elements that are visible
+-->

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Estilo.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.6.4-vsdoc.js"></script>
+    <script src="~/Scripts/jquery-1.6.4.js"></script>
+    <script src="~/Scripts/jquery-ui-1.10.4.js"></script>
+    @RenderSection("script", false)
+    <link href="~/Content/Estilo.css" rel="stylesheet" />
+    @RenderSection("style", false)
+</head>
+<body>
+    <section>
+        <h2>@ViewBag.Title</h2>
+        @RenderBody()
+    </section>
+    <nav id="menu">
+        @Html.ActionLink("introdução", "Index", "Home")
+        @Html.ActionLink("bind e hide", "Bind", "Home")
+        @Html.ActionLink("#id", "Text", "Home")
+        @Html.ActionLink(".class", "Length", "Home")
+        @Html.ActionLink("[id]", "Id", "Home")
+        @Html.ActionLink(">", "Seletor", "Home")
+        @Html.ActionLink("filtros", "Filtro", "Home")
+        @Html.ActionLink("múltiplos elementos", "Multiplos", "Home")
+        @Html.ActionLink("live", "Live", "Home")
+        @Html.ActionLink("ajax", "Ajax", "Home")
+        @Html.ActionLink("ui", "UI", "Home")
+    </nav>
+</body>
+</html>

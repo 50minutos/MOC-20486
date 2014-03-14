@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="@ViewBag.description" />
+    <meta name="keywords" content="@ViewBag.keywords" />
+    <meta name="googlebot" content="@ViewBag.googlebot" />
+    <meta name="robots" content="@ViewBag.robots" />
+
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <title>@ViewBag.title</title>
+</head>
+<body>
+    <header>
+        <nav>
+            @RenderPage("_Menu.cshtml", false)
+        </nav>
+    </header>
+    <section>
+        <header>
+            <h1>@ViewBag.h1</h1>
+        </header>
+        <div id="content">
+            @RenderBody()
+        </div>
+    </section>
+    <footer>
+        <p>by agnaldo &copy; 2014</p>
+        <p class="alerta">@RenderSection("alerta", false)</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿@section script{
+    <script type="text/javascript">
+        var Pessoa = function (codigo, nome, sexo) {
+            this.codigo = codigo;
+            this.nome = nome;
+            this.sexo = sexo;
+        };
+
+        Pessoa.prototype = {
+            toString: function () {
+                return this.codigo + " - " + this.nome + " - " + this.sexo;
+            }
+        };
+
+        var p = new Pessoa(1, "ADAO", "M");
+
+        document.writeln(p);
+    </script>
+}

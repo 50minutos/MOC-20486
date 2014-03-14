@@ -1,0 +1,40 @@
+﻿@section script{
+    <script type="text/javascript">
+        var p = Object.create(null, { codigo: { value: 1, writable: true }, nome: { value: "adão", writable: true } });
+
+        alert(p.codigo + " " + p.nome);
+
+        var Carro = function (placa, marca, modelo, ano) {
+            this.placa = placa;
+            this.marca = marca;
+            this.modelo = modelo;
+            this.ano = ano;
+        };
+
+        Carro.prototype = {
+            toString: function () {
+                return this.placa + " - " + this.marca + " - " + this.modelo + " - " + this.ano;
+            }
+        };
+
+        var c1 = new Carro("ABC1234", "VW", "FUSCA", 1969);
+
+        var c2 = Object.create(Carro.prototype, {
+            placa: { value: "ZZZ9999", writable: true },
+            marca: { value: "FIAT", writable: true },
+            modelo: { value: "147L", writable: true },
+            ano: { value: 1980, writable: true }
+        });
+
+        var c3 = Object.create(Object.getPrototypeOf(c1), {
+            placa: { value: "ZZZ9999", writable: true },
+            marca: { value: "FIAT", writable: true },
+            modelo: { value: "147L", writable: true },
+            ano: { value: 1980, writable: true }
+        });
+
+        alert(c1);
+        alert(c2);
+        alert(c3);
+    </script>
+}

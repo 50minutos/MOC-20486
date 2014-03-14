@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DBModelStoreContainer">
+          <EntitySet Name="CIDADE" EntityType="DBModel.Store.CIDADE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pessoa" EntityType="DBModel.Store.Pessoa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UF" EntityType="DBModel.Store.UF" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="CIDADE">
+          <Key>
+            <PropertyRef Name="COD_CIDADE" />
+          </Key>
+          <Property Name="COD_CIDADE" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NOME_CIDADE" Type="varchar" MaxLength="50" />
+          <Property Name="SIGLA_UF" Type="char" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="Pessoa">
+          <Key>
+            <PropertyRef Name="PessoaId" />
+          </Key>
+          <Property Name="PessoaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PessoaNome" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UF">
+          <Key>
+            <PropertyRef Name="SIGLA_UF" />
+          </Key>
+          <Property Name="SIGLA_UF" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="NOME_UF" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Pessoas" EntityType="DBModel.Pessoa" />
+          <EntitySet Name="CIDADEs" EntityType="DBModel.CIDADE" />
+          <EntitySet Name="UFs" EntityType="DBModel.UF" />
+          <AssociationSet Name="UFCIDADE" Association="DBModel.UFCIDADE">
+            <End Role="UF" EntitySet="UFs" />
+            <End Role="CIDADE" EntitySet="CIDADEs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Pessoa">
+          <Key>
+            <PropertyRef Name="PessoaId" />
+          </Key>
+          <Property Name="PessoaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PessoaNome" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CIDADE">
+          <Key>
+            <PropertyRef Name="COD_CIDADE" />
+          </Key>
+          <Property Type="Int32" Name="COD_CIDADE" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="NOME_CIDADE" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SIGLA_UF" MaxLength="2" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="UF" Relationship="DBModel.UFCIDADE" FromRole="CIDADE" ToRole="UF" />
+        </EntityType>
+        <EntityType Name="UF">
+          <Key>
+            <PropertyRef Name="SIGLA_UF" />
+          </Key>
+          <Property Type="String" Name="SIGLA_UF" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="NOME_UF" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CIDADES" Relationship="DBModel.UFCIDADE" FromRole="UF" ToRole="CIDADE" />
+        </EntityType>
+        <Association Name="UFCIDADE">
+          <End Type="DBModel.UF" Role="UF" Multiplicity="0..1" />
+          <End Type="DBModel.CIDADE" Role="CIDADE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UF">
+              <PropertyRef Name="SIGLA_UF" />
+            </Principal>
+            <Dependent Role="CIDADE">
+              <PropertyRef Name="SIGLA_UF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="Pessoas">
+            <EntityTypeMapping TypeName="DBModel.Pessoa">
+              <MappingFragment StoreEntitySet="Pessoa">
+                <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />
+                <ScalarProperty Name="PessoaNome" ColumnName="PessoaNome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CIDADEs">
+            <EntityTypeMapping TypeName="DBModel.CIDADE">
+              <MappingFragment StoreEntitySet="CIDADE">
+                <ScalarProperty Name="SIGLA_UF" ColumnName="SIGLA_UF" />
+                <ScalarProperty Name="NOME_CIDADE" ColumnName="NOME_CIDADE" />
+                <ScalarProperty Name="COD_CIDADE" ColumnName="COD_CIDADE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UFs">
+            <EntityTypeMapping TypeName="DBModel.UF">
+              <MappingFragment StoreEntitySet="UF">
+                <ScalarProperty Name="NOME_UF" ColumnName="NOME_UF" />
+                <ScalarProperty Name="SIGLA_UF" ColumnName="SIGLA_UF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

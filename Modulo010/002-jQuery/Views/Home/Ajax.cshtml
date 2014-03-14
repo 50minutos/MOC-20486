@@ -1,0 +1,12 @@
+﻿<pre id="txt"></pre>
+<script>
+    $.ajax({
+        url: "/Content/Pagina.txt",
+        type: 'GET',
+        dataType: 'text',
+        success: function (data) {
+           $(txt).html(data);
+        }
+    });
+
+</script>

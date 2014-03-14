@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    @*acesse http://www.websocket.org*@
+
+    <script type="text/javascript">
+        var wsUri = "ws://echo.websocket.org";
+        //var wsUri = "wss://echo.websocket.org";
+        var output;
+        var msg;
+
+        function init() {
+            output = document.getElementById("output");
+            msg = document.getElementById("msg");
+        }
+
+        function testWebSocket() {
+            websocket = new WebSocket(wsUri);
+
+            websocket.onopen = function (evt) { onOpen(evt) };
+            websocket.onclose = function (evt) { onClose(evt) };
+            websocket.onmessage = function (evt) { onMessage(evt) };
+            websocket.onerror = function (evt) { onError(evt) };
+        }
+
+        function onOpen(evt) {
+            writeToScreen("CONNECTED");
+            doSend(msg.value);
+        }
+
+        function onClose(evt) {
+            writeToScreen("DISCONNECTED");
+            msg.focus();
+            msg.selectionStart = 0;
+            msg.selectionEnd = msg.value.length;
+        }
+
+        function onMessage(evt) {
+            writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data + '</span>');
+            websocket.close();
+        }
+
+        function onError(evt) {
+            writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+        }
+
+        function doSend(message) {
+            writeToScreen("SENT: " + message);
+            websocket.send(message);
+        }
+
+        function writeToScreen(message) {
+            var pre = document.createElement("p");
+            pre.style.wordWrap = "break-word";
+            pre.innerHTML = message;
+            output.appendChild(pre);
+        }
+
+        window.addEventListener("load", init, false);
+    </script>
+</head>
+<body>
+    <h1>WebSocket</h1>
+    <input type="text" id="msg" />
+    <button onclick="javascript:testWebSocket()">Enviar mensagem</button>
+    <div id="output"></div>
+</body>
+</html>

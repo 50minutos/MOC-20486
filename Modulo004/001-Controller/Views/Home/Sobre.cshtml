@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <h1>@ViewBag.Title</h1>
+        
+        <p>@Html.ActionLink("Pessoas", "Index", "Pessoa")</p>
+        <p>@Html.ActionLink("Quem somos", "Sobre", "Home")</p>
+        
+        <hr/>
+
+        <p><a href="@ViewBag.URL" target="_blank">@ViewBag.URL</a> &middot; @ViewBag.ENDERECO</p>        
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <p>@Html.ActionLink("atualize a hora", "GetDate", "Home")</p>
+
+        <p>@Ajax.ActionLink("atualize a hora com AJAX", "GetDate", new AjaxOptions { UpdateTargetId = "Data", InsertionMode = InsertionMode.Replace })</p>
+
+        <span id="Data">.....</span>
+    </div>
+</body>
+</html>

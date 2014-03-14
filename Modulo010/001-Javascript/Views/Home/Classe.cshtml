@@ -1,0 +1,23 @@
+﻿@section script{
+    <script type="text/javascript">
+        var Pessoa = function (codigo, nome, sexo) {
+            this.codigo = codigo;
+            this.nome = nome;
+            this.sexo = sexo;
+        };
+
+        var p = new Pessoa(1, "ADAO", "M");
+
+        document.writeln("<p>" + p.codigo + "</p>");
+        document.writeln("<p>" + p.nome + "</p>");
+        document.writeln("<p>" + p.sexo + "</p>");
+
+        var q = new Pessoa(2, "EVA", "F");
+        q.idade = 22;
+
+        document.writeln("<p>" + q.codigo + "</p>");
+        document.writeln("<p>" + q.nome + "</p>");
+        document.writeln("<p>" + q.sexo + "</p>");
+        document.writeln("<p>" + q.idade + "</p>");
+    </script>
+}

@@ -1,0 +1,36 @@
+﻿@section script{
+    <script type="text/javascript">
+        var Comercial = {
+            Produto: function (codigo, nome, preco) {
+                this.codigo = codigo;
+                this.nome = nome;
+                this.preco = preco;
+            }
+        };
+
+        Comercial.Produto.prototype = {
+            toString: function () {
+                return this.codigo + " - " + this.nome + " - " + this.preco;
+            }
+        };
+
+        var Producao = {
+            Produto: function (codigo, nome) {
+                this.codigo = codigo;
+                this.nome = nome;
+            }
+        };
+
+        Producao.Produto.prototype = {
+            toString: function () {
+                return this.codigo + " - " + this.nome;
+            }
+        };
+
+        var p = new Producao.Produto(1, "martelo");
+        alert(p);
+
+        var q = new Comercial.Produto(2, "marreta", 120);
+        alert(q);
+    </script>
+}

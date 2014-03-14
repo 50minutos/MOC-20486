@@ -1,0 +1,13 @@
+﻿<div id="Cabecalho" style="cursor: pointer;">Título</div>
+<div id="Conteudo">Texto da bagaça</div>
+<div id="Rodape">Rodapé</div>
+
+<script type="text/javascript">
+    $(Cabecalho).bind("click", function () { alert("opa... essa é do bind()") })
+
+    //$(Dinamica).bind("click", function () { alert("opa... essa é do bind()") })
+
+    $("<div id='Dinamica' style='cursor:pointer;'>elemento dinâmico</div>").appendTo("body");
+
+    $(Dinamica).live("click", function () { alert(this.id); });
+</script>

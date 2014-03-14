@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Estilo.css" rel="stylesheet" />
+    @RenderSection("script", false)
+</head>
+<body>
+   <section>
+        <h2>@ViewBag.Title</h2>
+        @RenderBody()
+    </section>
+    <nav id="menu">
+        @Html.ActionLink("introdução", "Index", "Home")
+        @Html.ActionLink("variáveis", "Variaveis", "Home")
+        @Html.ActionLink("objetos", "Objetos", "Home")
+        @Html.ActionLink("function(){}", "Funcoes", "Home")
+        @Html.ActionLink("= {...}", "Init", "Home")
+        @Html.ActionLink("classe", "Classe", "Home")
+        @Html.ActionLink("protótipo", "Prototype", "Home")
+        @Html.ActionLink("create", "Create", "Home")
+        @Html.ActionLink("protótipo 2", "Prototype2", "Home")
+        @Html.ActionLink("get/set", "GetterSetter", "Home")
+        @Html.ActionLink("herança", "Heranca", "Home")
+        @Html.ActionLink("namespace", "Namespace", "Home")
+        @Html.ActionLink("DOM", "DOM", "Home")
+    </nav>
+</body>
+</html>

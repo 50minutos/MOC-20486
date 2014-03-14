@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <nav>
+        @Html.ActionLink("Index", "Index", "Home")
+        @Html.ActionLink("Index autenticado", "IndexAutenticado", "Home")
+        @Html.ActionLink("Index admin", "IndexAdmin", "Home")
+    </nav>
+
+    <article>
+        @RenderBody()
+    </article>
+
+    <footer>
+        <p>&copy; @DateTime.Now.Year - agnaldo</p>
+    </footer>
+</body>
+</html>

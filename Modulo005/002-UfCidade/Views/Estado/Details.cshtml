@@ -1,0 +1,29 @@
+﻿@model UfCidade.Models.Estado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Estado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoNome)
+        </dd>
+    </dl>
+    <dl>
+        <dt>@Html.DisplayNameFor(model => model.Cidades)</dt>
+        @Html.DisplayFor(model => model.Cidades)
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EstadoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

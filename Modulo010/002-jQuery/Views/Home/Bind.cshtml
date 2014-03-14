@@ -1,0 +1,14 @@
+﻿<a href="#">mostrar/ocultar a mensagem</a>
+<div id="msg"><h1>jQuery é uma biblioteca javascript.</h1></div>
+
+@section script{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#msg").hide();
+
+            $("a").bind("click", function () {
+                $("#msg").toggle();
+            });
+        });
+    </script>
+}

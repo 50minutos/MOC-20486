@@ -1,0 +1,40 @@
+﻿@model IEnumerable<_003_CacheMVC.Models.Produto>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>@ViewBag.Agora</h1>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoPreco)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProdutoNome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProdutoPreco)
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,224 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Trebuchet MS', arial, Verdana, sans-serif;
+    color: #666;
+}
+
+body {
+    background-color: #ddd;
+    font-size: 90%;
+}
+
+#header {
+    height: 40px;
+    background-image: url(LogoNumenIT.png);
+    background-repeat: no-repeat;
+    background-color: #ddd;
+    background-position-x: 10px;
+    background-position-y: 10px;
+}
+
+    #header p {
+        text-align: right;
+        height: 40px;
+        margin: auto;
+    }
+
+#menu {
+    list-style: none;
+    float: left;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+    #menu li {
+        position: relative;
+        float: left;
+    }
+
+        #menu li a {
+            text-decoration: none;
+            padding: 5px 20px;
+            display: block;
+        }
+
+            #menu li a:hover {
+                background-color: #666;
+                color: #fff;
+            }
+
+        #menu li ul {
+            position: absolute;
+            top: 25px;
+            left: 0;
+            background-color: #ddd;
+            display: none;
+        }
+
+        #menu li:hover ul, .menu li.over ul {
+            display: block;
+        }
+
+        #menu li ul li {
+            border: 1px solid #ccc;
+            display: block;
+            width: 200px;
+        }
+
+#header, #content, #content-form, #footer {
+    padding: 10px;
+    width: 94%;
+    margin: 0px auto;
+}
+
+#content-form {
+    margin-top: 10px;
+}
+
+#content, #content-form {
+    background-color: #fff;
+    border: 1px solid #bbb;
+}
+
+    #content *, #content-form * {
+        margin: 10px;
+    }
+
+    #content h1, #content-form h1 {
+        font-size: 120%;
+    }
+
+    #content h3, #content-form h3 {
+        font-size: 110%;
+        color: #ff0;
+        background-color: #f00;
+        text-align: center;
+        padding: 5px 0px;
+    }
+
+    #content h4, #content-form h4 {
+        font-size: 110%;
+        color: #fff;
+        background-color: #080;
+        text-align: center;
+        padding: 5px 0px;
+    }
+
+    #content table tr th a {
+        font-style: italic;
+    }
+
+    #content #action, #content-form #action {
+        text-align: center;
+        text-decoration: none;
+    }
+
+    #content a, #content-form a {
+        text-decoration: none;
+    }
+
+    #content #message {
+        background-color: #ff0;
+        padding: 10px;
+        width: 70%;
+        margin: 10px auto 0px auto;
+        border: 1px dashed #f00;
+    }
+
+        #content #message * {
+            margin: 10px;
+            color: #000;
+            font-weight: bold;
+        }
+
+    #content table {
+        border-width: 1px;
+        border-collapse: collapse;
+        margin: 0px auto;
+    }
+
+        #content table tr th {
+            border: 1px solid #666;
+            padding: 8px;
+            background-color: #ccc;
+        }
+
+        #content table tr td {
+            border: 1px solid #666;
+            padding: 8px;
+        }
+
+            #content table tr td ul {
+                list-style: none;
+            }
+
+                #content table tr td ul, #content table tr td ul li {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
+
+        #content table tfoot tr td {
+            border: 1px solid #666;
+            text-align: right;
+            background-color: #ccc;
+        }
+
+    #content-form table {
+        border-width: 1px;
+        border-collapse: collapse;
+        margin: 0px auto;
+    }
+
+        #content-form table tr th {
+            padding: 2px;
+            text-align: right;
+        }
+
+        #content-form table tr td {
+            padding: 2px;
+        }
+
+    #content input, #content-form input {
+        padding: 2px;
+    }
+
+input[type="submit"], input[type="reset"], input[type="button"] {
+    padding: 5px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#content select, #content-form select {
+    padding: 2px;
+    margin: 0px 10px;
+}
+
+#content-form .required {
+    color: #f00;
+    margin: 0px 2px;
+}
+
+#content-form .unique {
+    color: #00f;
+    margin: 0px 2px;
+}
+
+#footer {
+    text-align: center;
+    font-size: 80%;
+    font-style: italic;
+}
+
+    #footer a {
+        text-decoration: none;
+    }
+
+        #footer a:hover {
+            text-decoration: underline;
+        }
+
+.center {
+    text-align: center;
+}

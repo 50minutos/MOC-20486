@@ -1,0 +1,26 @@
+﻿@using _002_SqlInjection.Models;
+
+@model List<Estado>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index2</title>
+</head>
+<body>
+    <div>
+        <table border="1" cellpadding="5">
+            @foreach (var item in Model)
+            {
+                <tr><td>@Html.DisplayFor(o => item.EstadoSigla)</td><td>@Html.DisplayFor(o => item.EstadoNome)</td></tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

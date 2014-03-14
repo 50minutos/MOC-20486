@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "001-AjaxActionLink", "001-AjaxActionLink\001-AjaxActionLink.csproj", "{77B228B8-9E6E-4589-AC6A-CF1D5B51358A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "002-CacheWebForms", "001-CacheWebForms\002-CacheWebForms.csproj", "{B400FC48-EDE4-49F6-8FC4-96FCA62C17CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "003-CacheMVC", "003-CacheMVC\003-CacheMVC.csproj", "{BD259AAB-E88D-40CE-B06D-C9255F9221AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77B228B8-9E6E-4589-AC6A-CF1D5B51358A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77B228B8-9E6E-4589-AC6A-CF1D5B51358A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77B228B8-9E6E-4589-AC6A-CF1D5B51358A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77B228B8-9E6E-4589-AC6A-CF1D5B51358A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B400FC48-EDE4-49F6-8FC4-96FCA62C17CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B400FC48-EDE4-49F6-8FC4-96FCA62C17CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B400FC48-EDE4-49F6-8FC4-96FCA62C17CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B400FC48-EDE4-49F6-8FC4-96FCA62C17CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD259AAB-E88D-40CE-B06D-C9255F9221AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD259AAB-E88D-40CE-B06D-C9255F9221AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD259AAB-E88D-40CE-B06D-C9255F9221AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD259AAB-E88D-40CE-B06D-C9255F9221AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

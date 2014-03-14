@@ -1,0 +1,31 @@
+﻿body {
+    background-color: #ccc;
+}
+
+nav, section, footer {
+    display: table;
+    width: 100%;
+}
+
+    nav a {
+        margin-right: 20px;
+        margin-top: 20px;
+        text-decoration: none;
+        padding: 10px 30px;
+        background-color: #274272;
+        color: #ccc;
+        float: left;
+    }
+
+        nav a:hover {
+            margin-right: 20px;
+            text-decoration: none;
+            padding: 10px 30px;
+            background-color: #81aac3;
+            color: #274272;
+        }
+
+.erro {
+    color: #ff0;
+    background-color: #f00;
+}

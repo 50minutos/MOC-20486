@@ -1,0 +1,29 @@
+﻿@section script{
+    <script type="text/javascript">
+        var Pessoa = function (codigo, nome) {
+            var _codigo, _nome;
+
+            this.getCodigo = function () { return _codigo; };
+            this.getNome = function () { return _nome; };
+            this.setCodigo = function (codigo) { _codigo = codigo; };
+            this.setNome = function (nome) { _nome = nome; };
+
+            this.setCodigo(codigo);
+            this.setNome(nome);
+        }
+
+        Pessoa.prototype = {
+            toString: function () {
+                return this.getCodigo() + " - " + this.getNome();
+            }
+        };
+
+        var p = new Pessoa(1, "ADAO");
+
+        alert(p);
+
+        p.setNome("ADAOZIM");
+
+        alert(p.getNome());
+    </script>
+}

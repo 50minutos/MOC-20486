@@ -1,0 +1,15 @@
+﻿@section script{
+    <script type="text/javascript">
+        var p = new Object();
+        p.codigo = 1;
+        p.nome = "adão";
+
+        alert(p.codigo + " " + p.nome);
+
+        var s = JSON.stringify(p);
+        alert(s);
+
+        var q = JSON.parse(s);
+        alert(q.codigo + " " + q.nome);
+    </script>
+}

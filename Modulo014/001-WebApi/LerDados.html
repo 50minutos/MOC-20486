@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Logins</title>
+</head>
+<body>
+
+    <div>
+        <h2>Logins</h2>
+        <ul id="logins" />
+    </div>
+    <div>
+        <h2>busca por id</h2>
+        <input type="text" id="id" size="5" />
+        <input type="button" value="Buscar" onclick="find();" />
+        <p id="login" />
+    </div>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script>
+        var uri = 'api/Login';
+
+        $(document).ready(function () {
+            $.getJSON(uri)
+                .done(function (data) {
+                    $.each(data, function (key, item) {
+                        $('<li>', { text: formatItem(item) }).appendTo($('#logins'));
+                    });
+                });
+        });
+
+        function formatItem(item) {
+            return item.LoginId + ' - ' + item.LoginNome + ' - ' + item.LoginSenha;
+        }
+
+        function find() {
+            var id = $('#id').val();
+
+            $.getJSON(uri + '/' + id)
+                .done(function (data) {
+                    $('#login').text(formatItem(data));
+                })
+                .fail(function (request, status, err) {
+                    $('#login').text('Erro: ' + err);
+                });
+        }
+    </script>
+</body>
+</html>

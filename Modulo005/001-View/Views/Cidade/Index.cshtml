@@ -1,0 +1,37 @@
+﻿@model IEnumerable<_001_View.Models.Cidade>
+
+@{
+    ViewBag.Title = "Cidades";
+}
+
+<div id="content">
+    <h2>@ViewBag.Title</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                <th>@Html.DisplayNameFor(model => model.SiglaUF)</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UF.Nome)
+                    </td>
+                    <td>
+                        @Html.ActionLink(HttpUtility.HtmlDecode("&#x2328;"), "Edit", new { id = item.Id}, new { title = "editar" })
+                        @Html.ActionLink(HttpUtility.HtmlDecode("&#x2716;"), "Delete", new { id = item.Id }, new { title = "excluir" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p id="action"><a href="/Cidade/Create" >*</a></p>
+</div>

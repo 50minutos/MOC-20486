@@ -1,0 +1,12 @@
+﻿@section script{
+    <script type="text/javascript">
+        "use strict";
+        var x;
+        x = 10;
+        alert(x);
+
+        (function foo() { /*var*/ x = 1000;})();
+
+        alert(x);
+    </script>
+}

@@ -1,0 +1,9 @@
+﻿@using System.Web.Mvc
+
+@model UfCidade.Models.Cidade
+
+<p>
+    @Html.HiddenFor(o => o.CidadeId) 
+    @Html.HiddenFor(o => o.EstadoId)
+    @Html.TextBoxFor(o => o.CidadeNome)
+</p>
